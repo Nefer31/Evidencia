@@ -1,0 +1,98 @@
+/* Estilos generales */
+body {
+    font-family: Arial, Times, serif;
+    background-color: #f2f2f2;
+}
+    
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+    
+h1 {
+    margin: 0;
+}
+    
+article {
+    margin: 20px;
+}
+    
+    /* Estilos para los párrafos */
+.parrafo {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+    
+    /* Estilos para la lista */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+    
+ul li {
+    margin-bottom: 10px;
+}
+    
+/* Estilos para la tabla */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+    
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+    
+th {
+    background-color: #333;
+    color: white;
+}
+    
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+    
+/* Estilos para el formulario de suma */
+form {
+    margin-bottom: 20px;
+}
+    
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+    
+input[type="number"] {
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #a7a7a7;
+    margin-bottom: 10px;
+}
+    
+button {
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+button a{
+    text-decoration: none;
+    color: antiquewhite;
+}
+    
+/* Estilos para el botón de alerta */
+    .alert-button {
+    margin-bottom: 20px;
+}
