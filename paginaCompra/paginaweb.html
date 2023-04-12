@@ -18,28 +18,71 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Producto 1</td>
-          <td>$10</td>
-          <td><input type="checkbox" name="producto1"></td>
-          <td><button class="eliminar-producto">Eliminar</button></td>
-        </tr>
-        <tr>
-          <td>Producto 2</td>
-          <td>$20</td>
-          <td><input type="checkbox" name="producto2"></td>
-          <td><button class="eliminar-producto">Eliminar</button></td>
-        </tr>
-        <tr>
-          <td>Producto 3</td>
-          <td>$30</td>
-          <td><input type="checkbox" name="producto3"></td>
-          <td><button class="eliminar-producto">Eliminar</button></td>
-        </tr>
+        
       </tbody>
     </table>
     <button id="agregar-producto">Agregar Producto</button>
     <button id="comprar">Comprar</button>
     <div id="mensaje"></div>
+    <script>
+      const tablaProductos = document.getElementById("tabla-productos");
+const btnAgregarProducto = document.getElementById("agregar-producto");
+const btnEliminarProducto = document.getElementsByClassName("eliminar-producto");
+const btnComprar = document.getElementById("comprar");
+const mensaje = document.getElementById("mensaje");
+
+// Agregar un nuevo producto a la tabla
+btnAgregarProducto.addEventListener("click", function() {
+  // Crear una nueva fila y las celdas correspondientes
+  const nuevaFila = tablaProductos.insertRow();
+  const celdaProducto = nuevaFila.insertCell(0);
+  const celdaPrecio = nuevaFila.insertCell(1);
+  const celdaSeleccionar = nuevaFila.insertCell(2);
+  const celdaAcciones = nuevaFila.insertCell(3);
+
+  // Agregar los valores correspondientes a las celdas
+  celdaProducto.innerHTML = '<input type="text" class="nombre-producto">';
+  celdaPrecio.innerHTML = '<input type="number" class="precio-producto" min="0" step="0.01">';
+  celdaSeleccionar.innerHTML = '<input type="checkbox" name="nuevo-producto">';
+  celdaAcciones.innerHTML = '<button class="eliminar-producto">Eliminar</button>';
+
+  // Agregar un controlador de eventos al botón de eliminar del nuevo producto
+  const btnEliminarNuevoProducto = celdaAcciones.getElementsByClassName("eliminar-producto")[0];
+  btnEliminarNuevoProducto.addEventListener("click", function() {
+    tablaProductos.deleteRow(nuevaFila.rowIndex);
+  });
+});
+
+// Eliminar un producto existente de la tabla
+for (let i = 0; i < btnEliminarProducto.length; i++) {
+  btnEliminarProducto[i].addEventListener("click", function() {
+    const fila = this.parentNode.parentNode;
+    fila.parentNode.removeChild(fila);
+  });
+}
+
+// Controlador de eventos para el botón de comprar
+btnComprar.addEventListener("click", function() {
+  const productosSeleccionados = document.querySelectorAll('input[type="checkbox"]:checked');
+  let total = 0;
+
+  for (let i = 0; i < productosSeleccionados.length; i++) {
+    const fila = productosSeleccionados[i].parentNode.parentNode;
+    const nombreProducto = fila.getElementsByClassName("nombre-producto")[0].value;
+    const precioProducto = fila.getElementsByClassName("precio-producto")[0].value;
+
+    if (nombreProducto && precioProducto) {
+      total += parseFloat(precioProducto);
+      tablaProductos.deleteRow(fila.rowIndex);
+    }
+  }
+
+  if (total > 0) {
+    mensaje.innerHTML = "Compra realizada por un total de $" + total.toFixed(2);
+  } else {
+    mensaje.innerHTML = "No se seleccionaron productos para comprar";
+  }
+});
+    </script>
   </body>
 </html>
