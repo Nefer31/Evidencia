@@ -1,23 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Comprar Producto</title>
-  <link rel="stylesheet" type="text/css" href="estilos.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Comprar Producto</h1>
-    <div class="product">
-      <img src="imagenes/lavalosa.jpg" alt="Producto">
-      <h2>Lavalosa</h2>
-      <p>Descripción del producto.</p>
-      <p>Precio: $10000</p>
-      <button id="comprar">Comprar</button>
-    </div>
-    <div class="message hidden">
-      <p>¡Gracias por comprar!</p>
-    </div>
-  </div>
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js"></script>
+    <title>Tabla de Productos Seleccionables</title>
+  </head>
+  <body>
+    <h1>Tabla de Productos Seleccionables</h1>
+    <table id="tabla-productos">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Seleccionar</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Producto 1</td>
+          <td>$10</td>
+          <td><input type="checkbox" name="producto1"></td>
+          <td><button class="eliminar-producto">Eliminar</button></td>
+        </tr>
+        <tr>
+          <td>Producto 2</td>
+          <td>$20</td>
+          <td><input type="checkbox" name="producto2"></td>
+          <td><button class="eliminar-producto">Eliminar</button></td>
+        </tr>
+        <tr>
+          <td>Producto 3</td>
+          <td>$30</td>
+          <td><input type="checkbox" name="producto3"></td>
+          <td><button class="eliminar-producto">Eliminar</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="agregar-producto">Agregar Producto</button>
+    <button id="comprar">Comprar</button>
+    <div id="mensaje"></div>
+  </body>
 </html>

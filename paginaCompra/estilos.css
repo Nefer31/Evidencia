@@ -1,47 +1,74 @@
-.container {
-    max-width: 600px;
-    margin: 0 auto;
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
     text-align: center;
-}
-    
-.product {
-    margin-top: 50px;
-}
-    
-.product img {
-    width: 200px;
-    height: auto;
-    margin-bottom: 20px;
-}
-    
-.product h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-    
-.product p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-    
-.product button {
-    font-size: 1.2em;
+    margin-top: 20px;
+  }
+  
+  #tabla-productos {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  #tabla-productos th, #tabla-productos td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  #tabla-productos th {
+    background-color: #f2f2f2;
+  }
+  
+  #tabla-productos input[type=checkbox] {
+    transform: scale(1.5);
+  }
+  
+  .eliminar-producto {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .eliminar-producto:hover {
+    background-color: #c82333;
+  }
+  
+  #agregar-producto, #comprar {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
     padding: 10px 20px;
     border-radius: 5px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
     cursor: pointer;
-}
-    
-    .message {
-    margin-top: 50px;
-    }
-    
-    .message p {
-    font-size: 1.5em;
-    }
-    
-    .hidden {
-    display: none;
-    }
+    margin: 10px 20px;
+  }
+  
+  #agregar-producto:hover, #comprar:hover {
+    background-color: #0069d9;
+  }
+  
+  #mensaje {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .calculadora{
+    display: inline-block;
+    background-color: aqua;
+  }
+
+  .calculadora #numero1{
+    display: inline;
+  }
